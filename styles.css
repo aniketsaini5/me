@@ -1,0 +1,402 @@
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(28, 28, 28);
+    /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    /* Color of the thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+}
+
+/* Opera */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(63, 62, 62);
+    /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    /* Color of the thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+}
+
+
+*{
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* Base font size for rem units */
+}
+
+body {
+    background-color: #f8f9fa;
+    /* Light gray background */
+    color: #3a3a3a;
+    /* Dark gray text */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Default font */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0e0d0d;
+    /* Dark background for the navbar */
+    -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ffffff;
+    /* White color for brand and nav links */
+}
+
+.navbar-toggler-icon {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+    /* Dark icon for navbar toggler */
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 3rem 0;
+    /* Using rem for padding */
+}
+
+/* Home Section */
+#home {
+    background-image: url('/images/me.png');
+    /* Background image for home section */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home .parallax-content {
+    color: white;
+    text-align: left;
+    /* Align text to the left */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* Align content to the left edge */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 2rem;
+    /* Add padding from the left edge */
+}
+
+#home .parallax-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    /* Adjust size as needed */
+    margin: 0;
+}
+
+#home .parallax-content h2 {
+    font-size: 2rem;
+    /* Adjust size as needed */
+
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    #home {
+        background-image: url('/images/me.jpeg'); /* Change for mobile devices */
+        background-attachment: scroll; /* Disable fixed attachment for mobile for better performance */
+    }
+}
+
+
+/* Typing effect styles */
+#typing {
+    font-weight: bold;
+    border-right: 2px solid;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
+    }
+}
+
+
+
+/* About Section */
+#about {
+    background-color: #f8f9fa;
+    /* Light gray background */
+    color: #3a3a3a;
+    /* Dark gray text */
+}
+
+.custom-img {
+    max-width: 50%;
+    /* Adjust width to make image responsive */
+    height: auto;
+
+    border-radius: 1rem;
+    /* Rounded corners */
+
+    /* Add drop shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+
+    /* Mix blending mode */
+    mix-blend-mode: multiply;
+    /* You can change this to other values like 'screen', 'overlay', etc., depending on the effect you want */
+}
+
+
+/* Projects Section */
+#projects {
+    background-color: #e9ecef;
+    /* Light gray background */
+    color: #3a3a3a;
+    background-image: url('/images/project-bg.jpg');
+    /* Background image for projects section */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item>div {
+        display: none;
+    }
+
+    .carousel-inner .carousel-item>div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-start,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* transition-duration: 10s; */
+}
+
+/* display 4 */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-item-next:not(.carousel-item-start) {
+        -webkit-transform: translateX(25%) !important;
+        -ms-transform: translateX(25%) !important;
+        transform: translateX(25%) !important;
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start,
+    .carousel-item-prev:not(.carousel-item-end) {
+        -webkit-transform: translateX(-25%) !important;
+        -ms-transform: translateX(-25%) !important;
+        transform: translateX(-25%) !important;
+    }
+
+    .carousel-item-next.carousel-item-start,
+    .active.carousel-item-end {
+        -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+        transform: translateX(0) !important;
+    }
+
+    .carousel-inner .carousel-item-prev,
+    .carousel-item-prev:not(.carousel-item-end) {
+        -webkit-transform: translateX(-25%) !important;
+        -ms-transform: translateX(-25%) !important;
+        transform: translateX(-25%) !important;
+    }
+}
+
+
+/* Contact Section */
+#contact {
+    background: url("/images/contact-bg.jpg");
+    /* Background image for the contact section */
+    padding: 5rem 1rem;
+    /* Adequate padding for the contact section */
+}
+
+#contact h1 {
+    margin-bottom: 1.5rem;
+    /* Margin for the heading */
+}
+
+#contact .form-group {
+    margin-bottom: 1rem;
+    /* Margin for form groups */
+}
+
+#contact .btn-primary {
+    margin-top: 1rem;
+    /* Margin for the submit button */
+}
+
+/* Social Icons */
+.social-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.social-icons a {
+    color: #ffffff;
+    /* Dark color for icons */
+    margin: 0 0.5rem;
+    /* Margin between icons */
+}
+
+.social-icons i {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    /* Smooth color transition on hover */
+}
+
+.social-icons a:hover i {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
+/* Contact Form */
+.contact-form {
+    padding-top: 5em;
+    background: -o-linear-gradient(315deg, #4c6161b7, #1c151551);
+    background: linear-gradient(135deg, #4c6161b7, #1c151551);
+    border-radius: 20px;
+    color: white;
+}
+
+.contact-form h1 {
+    color: white;
+}
+
+/* Headings and Text */
+h1,
+h2,
+h5 {
+    color: #343a40;
+    /* Dark gray for headings */
+}
+
+p,
+a {
+    color: #202121;
+    /* Dark gray for text and links */
+}
+
+/* Parallax Section */
+.parallax {
+    height: 31.25rem;
+    /* Adjust height in rem units */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* Align content to the left edge */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-left: 2rem;
+    /* Add padding from the left edge */
+    z-index: 1;
+}
+
+/* Skill section */
+.skill {
+    margin-bottom: 1rem;
+}
+
+.progress {
+    background-color: #e9ecef;
+    /* Light gray background */
+    border-radius: 20px;
+    overflow: hidden;
+    height: 1rem;
+    /* Adjust height as needed */
+    width: 80%;
+}
+
+.progress-bar {
+    background-color: #5a5b5b;
+    /* Blue color for the progress bar */
+    text-align: center;
+    color: white;
+    height: 100%;
+    line-height: 1.3rem;
+    /* Align the text vertically */
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    /* Add some padding inside the bar */
+    -webkit-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+    /* Smooth transition for width */
+}
